@@ -1,0 +1,43 @@
+
+.calculatorData{
+    
+    width: 60%;
+    background-color: lightgreen;
+    color: white;
+    margin: 0 auto;
+}
+.input{
+    display: flex;
+    margin: auto;
+    padding: auto;
+    justify-content: center;
+    gap: 5px;
+}
+.operators{
+    display: flex;
+    margin: auto;
+    padding: auto;
+    justify-content: center;
+    gap: 5px;
+    padding-top: 10px;
+}
+.signInput {
+    background-color: transparent; /* Make the background transparent */
+    border: none; /* Remove border */
+    font-size: 20px; /* Set the font size to be small */
+    width: 50px; /* Set the width to make the input small */
+    text-align: center; /* Center align text */
+    padding: 2px; /* Adjust padding to fit content */
+}
+.calculatorData.dark{
+    color: white;
+    width: 50%;
+    height: 150px;
+    background-color: lightgreen;
+}
+.calculatorData.light{
+    color: black;
+    width: 50%;
+    height: 150px;
+    background-color: rgb(245, 158, 120);
+}

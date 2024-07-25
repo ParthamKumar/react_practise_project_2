@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import {  useState } from "react";
+import "./App.css";
+// import CalculatorData from './components/CalculatorData';
+import CalculatorDisplay from "./components/CalculatorDisplay";
+import Counter from "./components/Counter";
+import ThemeContext from "./Context/theme";
 
 function App() {
+  console.log("App");
+
+  const [mode,setMode] = useState("dark")
+  console.log(mode);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <ThemeContext.Provider value={mode}>
+      <div className={`App ${mode}`}>
+        <button
+          className={mode === "dark" ? "button-dark" : "button-light"}
+          onClick={()=>setMode(mode==="dark"? "light": "dark")}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          Mode
+        </button>
+        <Counter />
+        <CalculatorDisplay />
+        {/* <CalculatorData /> */}
+      </div>
+    </ThemeContext.Provider>
   );
 }
 
